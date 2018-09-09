@@ -3,12 +3,15 @@ package api
 import (
 	"encoding/json"
 	"net/http"
+	"path"
 	"strings"
 )
 
-func Handler(w http.ResponseWriter, r *http.Request) {
+func (a *API) PromotionsHandler(w http.ResponseWriter, r *http.Request) {
 	id := getID(r.URL.Path)
-	found := composeResponse(Start(id))
+	found := composeResponse(Search(id, path.Join(a.currentFilepath, a.currentFilename)))
+	w.Header().Set("Content-Type", "application/json")
+
 	if found == nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
@@ -21,6 +24,9 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 func composeResponse(found string) *Found {
 	splitted := strings.Split(found, ",")
+	if len(splitted) < 2 {
+		return nil
+	}
 	return &Found{
 		ID:             splitted[0],
 		Price:          splitted[1],
