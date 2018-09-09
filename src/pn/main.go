@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	up := api.API{}
-	http.HandleFunc("/promotions/", up.PromotionsHandler)
-	http.HandleFunc("/upload", up.UploadHandler)
+	api := api.API{}
+	http.HandleFunc("/promotions/", api.PromotionsHandler)
+	http.HandleFunc("/upload", api.UploadHandler)
 	log.Fatal(http.ListenAndServe(":1321", nil))
 }

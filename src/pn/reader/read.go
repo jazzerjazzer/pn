@@ -6,10 +6,6 @@ import (
 	"os"
 )
 
-type Interface interface {
-	Read() ([]string, error)
-}
-
 type FileReader struct {
 	path  string
 	batch int
