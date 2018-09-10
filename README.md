@@ -4,17 +4,11 @@
 
 - Clone this repository:
 ```
-git clone git@github.com:jazzerjazzer/mb.git
+git clone git@github.com:jazzerjazzer/pn.git
 ```
-- Install direnv: 
-```
-brew install direnv
-```
-- Change your working directory to `pn`
-- Allow direnv: 
-``` 
-direnv allow
-```
+- Set your GOPATH to `pn`
+  - Alternatively, you can use `direnv` with the .envrc file included in the project. 
+
 - Run the server (It will be running on port 1321): 
 ```
 go run src/pn/main.go
