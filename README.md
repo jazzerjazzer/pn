@@ -38,9 +38,9 @@ go test src/pn/integration_test.go
 
 ## Benchmarks (Mid 2012 Macbook Pro, 4GB RAM, Core i5 (I5-3210M))
 
-~200.000 lines: 60ms
-~1.000.000 lines: 270ms
-~3.000.000 lines: 1.91s
+- ~200.000 lines: 60ms
+- ~1.000.000 lines: 270ms
+- ~3.000.000 lines: 1.91s
 
 ## Known Issues: 
 
